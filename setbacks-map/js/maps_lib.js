@@ -288,7 +288,7 @@ var MapsLib = {
 
     var sql = encodeURIComponent(queryStr.join(" "));
     // console.log(sql)
-    $.ajax({url: "https://www.googleapis.com/fusiontables/v1/query?sql="+sql+"&callback="+callback+"&key="+MapsLib.googleApiKey, dataType: "jsonp"});
+    $.ajax({url: "http://www.googleapis.com/fusiontables/v1/query?sql="+sql+"&callback="+callback+"&key="+MapsLib.googleApiKey, dataType: "jsonp"});
   },
 
   handleError: function(json) {
