@@ -56,14 +56,15 @@
               <li>
                 <label class='radio inline'>
                   <input type='radio' name='types' id='rbPolygon1'  />
-                <span class='filter-box filter-blue'></span> Show all wells
+                <span class='filter-box filter-purple'></span> Show all wells
                 </label>
               </li>
             </ul>
-            <p>Inside Energy analysis identified 222 wells drilled since 2013 that are within 500 ft. of residential buildings, all in Weld County. There could be many more.</p>
-            <p>This map shows 500 ft. circles drawn around well locations. Zoom in to see the houses, farms and other buildings that lie within this setback distance.</p>
+            <p><b>Inside Energy analysis identified 222 wells within 500 ft. of residential buildings</b> drilled since 2013, all in Weld County. There could be many more. You can toggle between the wells we identified near residencers (yellow) and all wells (purple) drilled since 2013.</p>
+            <p><b>Why do I see circles when I zoom in?</b> This map shows 500 ft. circles drawn around well locations. Zoom in to see the houses, farms and other buildings that lie within this setback distance.</p>
+            <p><b>Why do I see a bunch of overlapping circles?</b> Often, many wells are drilled from the same well pad. They may be horizontal under the surface, but have surface holes that are very close together.</p>
             <h5>
-              Address <small>(<a id='find_me' href='#'>find me</a>)</small>
+              Search for Wells Near an Address <small>(<a id='find_me' href='#'>find me</a>)</small>
             </h5>
             <p>
               <input class='form-control' id='search_address' placeholder='Enter an address or an intersection' type='text' />
@@ -123,7 +124,7 @@
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.address.js"></script>
-    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?libraries=places&key=AIzaSyAQVkNSgnvp4Ms9EjJCRkngIleA4mlqx0A"></script>
     <script type="text/javascript" src="js/jquery.geocomplete.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.sorting.js"></script>
