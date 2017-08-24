@@ -132,13 +132,6 @@
     <script type="text/javascript" src="js/maps_lib.js"></script>
     <script type='text/javascript'>
       //<![CDATA[
-        $(window).resize(function () {
-          var h = $(window).height(),
-            offsetTop = 105; // Calculate the top offset
-
-          $('#map_canvas').css('height', (h - offsetTop));
-        }).resize();
-
         $(function() {
           MapsLib.initialize();
           $("#search_address").geocomplete();
@@ -196,9 +189,30 @@
       //]]>
 
     </script>
-<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
-   <script>
-    var pymChild = new pym.Child();
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+    <script>
+      function setmapheight(e) {
+        /**
+         * attempt to calculate the height that the map should be
+         *
+         * I think that the assumptions in this code are invalid when working in an iframe. It may be best to pick a fixed height.
+         *
+         * The only reason not to set a fixed height would be:
+         * if this map is going to be used outside of the pym iframe at any point in time, AND
+         * if you don't want the map, when displayed outside the pym iframe, to overflow the height of the browser and cause the page to scroll.
+         *
+         */
+        var h = $(window).height(); // this rapidly increases because 'window' is the iframe, not the top-level viewport.
+        var offsetTop = 105; // Calculate the top offset using the assumption that the page is a top-level viewport
+        var newheight = h - offsetTop;
+
+        // set the height of the thing
+        $('#map_canvas').css('height', (newheight));
+        console.log(newheight);
+      }
+      var pymChild = new pym.Child({
+        renderCallback: setmapheight
+      });
     </script>
   </body>
 </html>
