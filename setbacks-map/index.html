@@ -193,7 +193,9 @@
          */
         var h = $(window).height(); // this rapidly increases because 'window' is the iframe, not the top-level viewport.
         var offsetTop = 105; // Calculate the top offset using the assumption that the page is a top-level viewport
-        var newheight = "650px";
+        //var newheight = h - offsetTop;
+// instead use a fixed height:
+        var newheight = "600px";
         // set the height of the thing
         $('#map_canvas').css('height', (newheight));
         console.log(newheight);
