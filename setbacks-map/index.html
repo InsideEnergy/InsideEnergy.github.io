@@ -135,49 +135,39 @@
         $(function() {
           MapsLib.initialize();
           $("#search_address").geocomplete();
-
           $(':checkbox').click(function(){
             MapsLib.doSearch();
           });
-
           $(':radio').click(function(){
             MapsLib.doSearch();
           });
-
           $('#search_radius').change(function(){
             MapsLib.doSearch();
           });
-
           $('#search').click(function(){
             MapsLib.doSearch();
           });
-
           $('#find_me').click(function(){
             MapsLib.findMe();
             return false;
           });
-
           $('#reset').click(function(){
             $.address.parameter('address','');
             MapsLib.initialize();
             return false;
           });
-
           $('#viewmode').click(function(){
             if ($('#map_canvas').is(":visible")){
               $('#viewmode').html("<i class='glyphicon glyphicon-map-marker'></i> Map view");
               $('#listview').show();
               $('#map_canvas').hide();
             }
-
             else {
               $('#viewmode').html("<i class='glyphicon glyphicon-list-alt'></i> List view");
               $('#map_canvas').show();
                 $('#listview').hide();
             }
            });
-
-
           $(":text").keydown(function(e){
               var key =  e.keyCode ? e.keyCode : e.which;
               if(key == 13) {
@@ -187,7 +177,6 @@
           });
         });
       //]]>
-
     </script>
     <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
     <script>
@@ -204,8 +193,7 @@
          */
         var h = $(window).height(); // this rapidly increases because 'window' is the iframe, not the top-level viewport.
         var offsetTop = 105; // Calculate the top offset using the assumption that the page is a top-level viewport
-        var newheight = h - offsetTop;
-
+        var newheight = "650px";
         // set the height of the thing
         $('#map_canvas').css('height', (newheight));
         console.log(newheight);
